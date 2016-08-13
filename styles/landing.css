@@ -2,17 +2,6 @@ body.landing {
   background-color: rgb(58,23,63);
 }
 
-/*------- NAVIGATION -------*/
-.navbar {
-  padding: 0.5rem;
-  background-color: rgb(101,18,95);
-}
-
-.navbar .logo {
-  position: relative;
-  left: 2rem;
-}
-
 /*------- HERO SECTION -------*/
 
 .hero-content {
