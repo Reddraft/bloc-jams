@@ -35,6 +35,11 @@ body.landing {
   max-width: 64rem;
 }
 
+.container.narrow {
+  max-width: 56rem;
+}
+
+
 /*------- NAVIGATION -------*/
 .navbar {
   position: relative;
@@ -78,6 +83,7 @@ body.landing {
   color: rgb(233,50,117);
 }
 
+
 /* Medium and small screens (640px) */
 @media (min-width: 640px) {
   html { font-size: 112%; }
@@ -99,5 +105,5 @@ body.landing {
 
 /* Large screens (1024px) */
 @media (min-width: 1024px) {
-  html { font-size: 112%; }
+  html { font-size: 120%; }
 }
