@@ -1,19 +1,16 @@
 //get points in selling-points
 var pointsArray = document.getElementsByClassName('point');
 
+//function that applies styles to a single point
+var revealPoint = function(point) {
+  point.style.opacity = 1;
+  point.style.transform = "scaleX(1) translateY(0)";
+  point.style.WevkitTransform = "scaleX(1) translateY(0)";
+};
+
 //Animate every point in selling-points
 var animatePoints = function(points) {
-  //function that applies styles to a single point
-  var revealPoint = function(index) {
-    points[index].style.opacity = 1;
-    points[index].style.transform = "scaleX(1) translateY(0)";
-    points[index].style.WevkitTransform = "scaleX(1) translateY(0)";
-  };
-  //loop through pointsArray and apply the styling
-  for(var i = 0; i < pointsArray.length; i++) {
-    revealPoint(i);
-  }
-
+  forEach(points, revealPoint);
 };
 
 window.onload = function() {
