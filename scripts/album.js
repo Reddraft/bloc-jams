@@ -58,6 +58,52 @@ var albumMarconi = {
         }
     ]
 };
+// The Telephone Album
+var albumACDC = {
+    title: 'Dirty Deeds Done Dirt Cheap',
+    artist: 'AC/DC',
+    label: 'Sony',
+    year: '1976',
+    albumArtUrl: 'assets/images/album_covers/20.png',
+    songs: [
+        {
+          title: 'Dirty Deeds Done Dirt Cheap',
+          duration: '3:52'
+        },
+        {
+          title: 'Love at First Feel',
+          duration: '3:11'
+        },
+        {
+          title: 'Big Balls',
+          duration: '2:39'
+        },
+        {
+          title: 'Rocker',
+          duration: '2:51'
+        },
+        {
+          title: 'Problem Child',
+          duration: '5:46'
+        },
+        {
+          title: 'There\'s Gonna Be Some Rocki\'',
+          duration: '3:18'
+        },
+        {
+          title: 'Ain\'t No Fun(Waiting Round To Be Millionaire)',
+          duration: '6:54'
+        },
+        {
+          title: 'Ride On',
+          duration: '5:50'
+        },
+        {
+          title: 'Squealer',
+          duration: '5:27'
+        },
+    ]
+};
 
 //Dynamically Generate Song Row Content
 
@@ -97,7 +143,26 @@ var setCurrentAlbum = function(album) {
   }
 
 };
+//select the image cover of the album
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+//list of albums
+var albums = [albumPicasso, albumMarconi, albumACDC ];
+//initialize index of first album that appears when click for the first time
+var index = 1;
+
 //execute setCurrentAlbum function when the page loads
 window.onload = function() {
+  //album that displays when the page loads
   setCurrentAlbum(albumPicasso);
+  //add a click listener to the image cover
+  albumImage.addEventListener('click', function(event) {
+    //when click for the forst time it will show the album at the initialize index
+    setCurrentAlbum(albums[index]);
+    //add 1 to index so next time it clicks it shows another next album
+    index++;
+    //when it finish display the albums start from the first one again
+    if (index === albums.length) {
+      index = 0;
+    }
+  });
 }
